@@ -8,16 +8,17 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final wordPair = WordPair.random(); // Add this line.
+    final wordPair = WordPair.random();  // DELETE
+
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
+          title: Text('Welcome to Flutter'),
         ),
         body: Center(
-          //child: Text('Hello World'),   // Replace this text...
-          child: Text(wordPair.asPascalCase),  // With this text.
+          //child: Text(wordPair.asPascalCase), // REPLACE with...
+          child: RandomWords(),                 // ...this line
         ),
       ),
     );
@@ -106,5 +107,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+}
+
+class RandomWords extends StatefulWidget {
+  @override
+  _RandomWordsState createState() => _RandomWordsState();
+}
+
+class _RandomWordsState extends State<RandomWords> {
+  @override
+  Widget build(BuildContext context) {
+    final wordPair = WordPair.random();      // NEW
+    return Text(wordPair.asPascalCase);      // NEW
   }
 }
