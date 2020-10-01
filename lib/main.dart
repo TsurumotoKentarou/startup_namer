@@ -8,10 +8,11 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // final wordPair = WordPair.random();  // DELETE
-
     return MaterialApp(
-      title: 'Welcome to Flutter',
+      title: 'Startup Name Generator',
+      theme: ThemeData(          // Add the 3 lines from here...
+        primaryColor: Colors.white,
+      ),                         // ... to here.
       home: RandomWords(),
     );
   }
